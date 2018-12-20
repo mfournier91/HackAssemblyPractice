@@ -17,3 +17,38 @@
 // Goto LOOP
 // ENDLOOP
 // STOP
+
+@0
+D=A
+@R2
+M=D
+
+@1
+D=A
+@i
+M=D
+
+(LOOP)
+@i
+D=M
+@R1
+D=D-M
+@STOP
+D;JGT
+
+@R0
+D=M
+@R2
+M=M+D
+
+@1
+D=A
+@i
+M=M+D
+
+@LOOP
+0;JMP
+
+(STOP)
+@STOP
+0;JMP
