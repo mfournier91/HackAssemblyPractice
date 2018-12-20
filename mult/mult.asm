@@ -7,3 +7,13 @@
 // (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
 
 // Put your code here.
+
+// R2 = 0
+// i = 1
+// LOOP
+// if i > R1 Goto STOP
+// R2 += R0
+// i++
+// Goto LOOP
+// ENDLOOP
+// STOP
