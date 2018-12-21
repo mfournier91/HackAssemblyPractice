@@ -20,6 +20,51 @@
 // @color = -1
 // FILL
 // if i > 8191, Goto START
-// Memory[@screen + @i] = @color
+// @temp = @screen + Memory[@i]
+// @temp = @color
 // i++
 // Goto Fill
+
+(START)
+@0
+D=A
+@color
+M=D
+
+@i
+M=D
+
+@KBD
+D=M
+@FILL
+D;JEQ
+
+@color
+M=-1
+
+(FILL)
+@i
+D=M
+@8191
+D=D-A
+@START
+D;JGT
+
+@SCREEN
+D=A
+@i
+D=D+M
+@temp
+M=D
+
+@color
+D=M
+@temp
+A=M
+M=D
+
+@i
+M=M+1
+
+@FILL
+0;JMP
